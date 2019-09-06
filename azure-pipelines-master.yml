@@ -1,0 +1,16 @@
+trigger:
+  branches:
+    include:
+    - master
+pool:
+  vmImage: 'windows-latest'
+steps:
+- script: npm install
+  displayName: 'Run install packages'
+- script: |
+    npm run ci
+  displayName: 'Run lint/build/test'
+- task: Npm@1
+  inputs:
+    command: 'publish'
+    publishEndpoint: 'Npm registry'
