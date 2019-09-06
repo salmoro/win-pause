@@ -1,6 +1,6 @@
 {
   "name": "win-pause",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Pause & resume windows processes with Node",
   "main": "dist/index.js",
   "scripts": {
