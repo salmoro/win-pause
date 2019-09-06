@@ -6,7 +6,7 @@ trigger:
     exclude:
     - master
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 steps:
 - script: npm install
   displayName: 'Run install packages'
