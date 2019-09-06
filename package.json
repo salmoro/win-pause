@@ -2,7 +2,7 @@
   "name": "win-pause",
   "version": "1.0.0",
   "description": "Pause & resume windows processes with Node",
-  "main": "dist",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc -d",
     "test": "jest",
