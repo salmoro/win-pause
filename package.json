@@ -2,10 +2,9 @@
   "name": "win-pause",
   "version": "1.0.0",
   "description": "Pause & resume windows processes with Node",
-  "main": "main.js",
+  "main": "dist",
   "scripts": {
     "build": "tsc -d",
-    "pretest": "npm run build && node ./pre-test",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls",
@@ -31,10 +30,8 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.18",
-    "@types/request": "^2.48.2",
     "@types/adm-zip": "^0.4.32",
     "adm-zip": "^0.4.13",
-    "request": "^2.88.0",
     "coveralls": "^3.0.6",
     "jest": "^24.9.0",
     "ts-jest": "^24.0.2",

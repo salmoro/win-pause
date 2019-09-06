@@ -1,6 +1,5 @@
-PSTools*
-main.js
-pre-test.js
+pssuspend*
+dist
 .coveralls.yml
 # Logs
 logs

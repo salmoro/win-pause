@@ -3,10 +3,9 @@ Pause & resume windows processes with Node
 
 A node wrapper for [PsSuspend](https://docs.microsoft.com/en-us/sysinternals/downloads/pssuspend)
 
-> ATTENTION: By running this module you'll be using PsSuspend directly from [Sysinternals Live](https://docs.microsoft.com/en-us/sysinternals/#sysinternals-live)
-> and you'll be programmatically accepting the EULA.
+> ATTENTION: By running this module you'll be be programmatically
+> accepting the EULA of PsSuspend.
 > Please be sure to read the Eula [here](https://docs.microsoft.com/en-us/sysinternals/license-terms) before proceeding.
-
 
 
 ## Supported OS
@@ -21,35 +20,37 @@ Install WinPause via NPM:
 ```sh
 npm i win-pause
 ```
-
 ## Usage
+If you already have [PsSuspend](https://live.sysinternals.com/files/pssuspend.zip) on the machine:
 ```ts
 import { pause, resume } from 'win-pause';
 
-const pid = 9020
+const binPath = 'my-path/pssuspend.exe';
+const pid = 9020;
 
-pause(pid)
-    .then(() => console.log('successfully paused!'))
+pause(pid, binPath)
+    .then(() => console.log('successfully paused!'));
 
-resume(pid)
-    .then(() => console.log('successfully resumed!'))
+resume(pid, binPath)
+    .then(() => console.log('successfully resumed!'));
 ```
 
-Alternatively, to be network independent, Win Pause can be used with a local pssuspend binary:
-
-First download and unzip [pssuspend](https://live.sysinternals.com/files/pssuspend.zip).
+Otherwise: 
 
 ```ts
-import { pause, resume } from 'win-pause';
+import { pause, resume, downloadPsSuspend } from 'win-pause';
 
-const pid = 9020
-const pathToLocalBinary = '../pssuspend.exe';
+const pid = 9020;
 
-pause(pid, pathToLocalBinary)
-    .then(() => console.log('successfully paused!'))
+downloadPsSuspend()
+    .then(() => {
+        pause(pid)
+            .then(() => console.log('successfully paused!'));
+        
+        resume(pid)
+            .then(() => console.log('successfully resumed!'));
+    })
 
-resume(pid, pathToLocalBinary)
-    .then(() => console.log('successfully resumed!'))
 ```
 
 ## Test
