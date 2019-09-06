@@ -1,11 +1,10 @@
 # Win Pause
 Pause & resume windows processes with Node
 
-[![npm version](https://badge.fury.io/js/win-pause.svg)](https://badge.fury.io/js/win-pause)
 A node wrapper for [PsSuspend](https://docs.microsoft.com/en-us/sysinternals/downloads/pssuspend)
 
+[![npm version](https://badge.fury.io/js/win-pause.svg)](https://badge.fury.io/js/win-pause)
 [![Build Status](https://dev.azure.com/shlomorosow/win-pause/_apis/build/status/win-pause.default?branchName=master)](https://dev.azure.com/shlomorosow/win-pause/_build/latest?definitionId=3&branchName=master)
-
 [![Coverage Status](https://coveralls.io/repos/github/salmoro/win-pause/badge.svg?branch=master)](https://coveralls.io/github/salmoro/win-pause?branch=master)
 
 > ATTENTION: By running this module you'll be be programmatically
