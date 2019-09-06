@@ -1,9 +1,8 @@
 
 import { execFile } from 'child_process';
+import { PsSuspendPaths as paths} from './constants';
 
 type Pid = number | string;
-
-const webBinary = '\\\\live.sysinternals.com\\tools\\pssuspend.exe';
 
 /**
  * Pause a process
@@ -31,7 +30,7 @@ function resume(
 
 function psSuspend(
     pid: Pid,
-    binPath = webBinary,
+    binPath = paths.binary,
     isResume = false,
 ) {
     const pidStr = String(pid);
